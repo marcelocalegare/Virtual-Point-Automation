@@ -1,10 +1,13 @@
-import pyautogui as pgui
-from time import sleep
-from datetime import datetime, time
+import pyautogui as pgui # Importa a biblioteca pyautogui e define ela para pgui
+from time import sleep # Importa a função sleep da biblioteca time
+from datetime import datetime, time # Importa as funções datetime e time da biblioteca datetime
 
-break_time = time(17, 1) # Define um horario e armazena
+break_time = time(15, 30) # Define um horario e armazena
 
 current_time = datetime.now().time().replace(second=0, microsecond=0) # Pega o horario atual e armazena em uma variavel
+
+temp_segundos = 0 # Define um valor inicial
+temp_minutos = 0 # Define um valor inicial
 
 while True:
 
@@ -14,11 +17,10 @@ while True:
         if confirm == 'Não': # Caso o usuario escolha a opção 'não' o programa pergunta daqui quanto tempo o usuario deseja realizar a automação e armazena em uma variavel
             temp_minutos = int(pgui.prompt(title='AUTOMAÇÃO PONTO VIRTUAL', text='DAQUI QUANTO TEMPO DESEJA BATER SEU PONTO? [EM MINUTOS]'))
 
-        elif confirm == 'Cancelar':
+        elif confirm == 'Cancelar': # Finaliza o programa caso o usuário clique em 'Cancelar'
             break 
 
     
-
     temp_segundos = temp_minutos * 60 # Transforma o tempo de minutos para segundos
 
     sleep(temp_segundos) # Pausa durante quanto tempo o usuario determinar
@@ -47,11 +49,11 @@ while True:
     pgui.moveTo(820,634,duration=2) # Move o mouse até o botão confirmar
     sleep(1) # Pausa durante 1 segundo
 
-    pgui.click() # Clica no botaão confirmar
+    pgui.click() # Clica no botão confirmar
     sleep(5) # Pausa durante 5 segundos
 
     pgui.press('Enter') # Pressiona enter para sair do programa
     sleep(2) # Pausa durante 2 segundos
 
-    pgui.alert(title='AUTOMAÇÃO PONTO VIRTUAL', text='PONTO ELETRONICO BATIDO!', button='Ok')
-    break
+    pgui.alert(title='AUTOMAÇÃO PONTO VIRTUAL', text='PONTO ELETRONICO BATIDO!', button='Ok') # Exibe um alerta finalizando o programa com exito
+    break # Finaliza o looping
