@@ -6,8 +6,8 @@ break_time = time(15, 30) # Define um horario e armazena
 
 current_time = datetime.now().time().replace(second=0, microsecond=0) # Pega o horario atual e armazena em uma variavel
 
-temp_segundos = 0 # Define um valor inicial
-temp_minutos = 0 # Define um valor inicial
+temp_segundos = 0 # Define um valor inicial para a variavel temp_segundos
+temp_minutos = 0 # Define um valor inicial para a variavel temp_minutos
 
 while True:
 
