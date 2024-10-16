@@ -9,7 +9,7 @@ current_time = datetime.now().time().replace(second=0, microsecond=0) # Pega o h
 temp_segundos = 0 # Define um valor inicial para a variavel temp_segundos
 temp_minutos = 0 # Define um valor inicial para a variavel temp_minutos
 
-while True:
+while True: # Inicia o looping
 
     if current_time == break_time: # Faz a verificação se o horario atual esta igual ao horario do break time
         confirm = pgui.confirm(title='AUTOMAÇÃO PONTO VIRTUAL', text='DESEJA BATER O PONTO VIRTUAL AGORA?', buttons=['Sim','Não', 'Cancelar']) # Recebe uma confirmação do usuario (sim, não, cancelar)
@@ -28,25 +28,25 @@ while True:
     pgui.hotkey('win','m') # Atalho até a area de trabalho
     sleep(2) # Pausa de 5 segundos
 
-    pgui.moveTo(554,35,duration=2) # Move o cursor até o icone do ponto virtual
+    pgui.moveTo(554,35,duration=0.5) # Move o cursor até o icone do ponto virtual
     sleep(1) # Pausa durante 1 segundo
 
     pgui.doubleClick() # Realiza a ação de double click para abrir o software
     sleep(10) # Pausa durante 10 segundos
 
-    pgui.moveTo(191,142,duration=2) # Move o cursor até o campo de senha
+    pgui.moveTo(191,142,duration=0.5) # Move o cursor até o campo de senha
     sleep(1) # Pausa durante 1 segundo
 
     pgui.write('MCS931') # Coloca a senha no campo senha
     sleep(1) # Pausa durante 1 segundo
 
-    pgui.moveTo(152,629,duration=2) # Move o cursor até o campo de emoções
+    pgui.moveTo(152,629,duration=0.5) # Move o cursor até o campo de emoções
     sleep(1) # Pausa durante 1 segundo
 
     pgui.click() # Clica na emoção desejada
     sleep(1) # Pausa durante 1 segundo
 
-    pgui.moveTo(820,634,duration=2) # Move o mouse até o botão confirmar
+    pgui.moveTo(820,634,duration=0.5) # Move o mouse até o botão confirmar
     sleep(1) # Pausa durante 1 segundo
 
     pgui.click() # Clica no botão confirmar
